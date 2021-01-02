@@ -1,37 +1,35 @@
 package com.chrisuribe;
 
-
-import java.util.LinkedList;
-
 public class Main {
 
     public static void main(String[] args) {
 
-        com.chrisuribe.LinkedList myList = new com.chrisuribe.LinkedList();
+
+        LinkedList myList = new LinkedList();
 
         myList.addFirst(10);
         myList.addLast(50);
         myList.addLast(100);
         myList.addLast(200);
-        System.out.println("Contains: 10" + myList.contains(10));
+        System.out.println("Contains: 10 " + myList.contains(10));
         System.out.println(myList.indexOf(10));
-        System.out.println("Contains: 50" + myList.contains(50));
+        System.out.println("Contains: 50 " + myList.contains(50));
         System.out.println(myList.indexOf(50));
-        System.out.println("Contains: 100" + myList.contains(100));
+        System.out.println("Contains: 100 " + myList.contains(100));
         System.out.println(myList.indexOf(100));
-        System.out.println("Contains: 200" + myList.contains(200));
+        System.out.println("Contains: 200 " + myList.contains(200));
         System.out.println(myList.indexOf(200));
 
         myList.deleteFirst();
         myList.deleteLast();
 
-        System.out.println("Contains: 10" + myList.contains(10));
+        System.out.println("Contains: 10 " + myList.contains(10));
         System.out.println(myList.indexOf(10));
-        System.out.println("Contains: 50" + myList.contains(50));
+        System.out.println("Contains: 50 " + myList.contains(50));
         System.out.println(myList.indexOf(50));
-        System.out.println("Contains: 100" + myList.contains(100));
+        System.out.println("Contains: 100 " + myList.contains(100));
         System.out.println(myList.indexOf(100));
-        System.out.println("Contains: 200" + myList.contains(200));
+        System.out.println("Contains: 200 " + myList.contains(200));
         System.out.println(myList.indexOf(200));
 
 //        LinkedList list = new LinkedList();

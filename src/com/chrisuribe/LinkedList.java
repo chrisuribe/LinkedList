@@ -4,9 +4,21 @@ public class LinkedList {
     private Node first;
     private Node last;
 
+    public void addLast(int value){
+        var newLast = new Node(value);
+
+        if (first==null) { // were starting a brand new LinkedList
+            first = last = newLast;
+        }
+        else {
+            last.next = newLast;
+            last = newLast;
+        }
+    }
+
     public void startLinkedList(int value){
-        first = new Node(value);
-        last = first;
+        var node = new Node(value);
+        first = last = node;
     }
 
     public void addFirst(int value) {
@@ -18,16 +30,6 @@ public class LinkedList {
         }
     }
 
-    public void addLast(int value){
-        if (last==null) { // were starting a brand new LinkedList
-            startLinkedList(value);
-        }
-        else {
-            var newLast = new Node(value);
-            last.setNext(newLast);
-            last = newLast;
-        }
-    }
 
     public void deleteFirst(){
         if (first == null) // empty LinkedList
@@ -80,4 +82,31 @@ public class LinkedList {
         }
     }
 
+    // just a test
+    private static class Node {
+
+        private int value;
+        private Node next;
+
+
+        public int getValue() {
+            return value;
+        }
+        public Node getNext() {
+            return next;
+        }
+
+        public void setNext(Node next) {
+            this.next = next;
+        }
+
+        public Node(int value) {
+            this.value = value;
+        }
+
+        public Node(int value, Node next) {
+            this.value = value;
+            this.next = next;
+        }
+    }
 }
