@@ -5,31 +5,32 @@ public class LinkedList {
     private Node last;
 
     public void addLast(int value){
-        var newLast = new Node(value);
-
-        if (first==null) { // were starting a brand new LinkedList
-            first = last = newLast;
+        var node = new Node(value);
+        if (isEmpty()) { // were starting a brand new LinkedList
+            first = last = node;
         }
         else {
-            last.next = newLast;
-            last = newLast;
+            last.next = node;
+            last = node;
         }
-    }
-
-    public void startLinkedList(int value){
-        var node = new Node(value);
-        first = last = node;
     }
 
     public void addFirst(int value) {
-        if (first==null) { // were starting a brand new LinkedList
-            startLinkedList(value);
+        var node = new Node(value);
+        if (isEmpty()) { // were starting a brand new LinkedList
+            first = last = node;
         }
         else {
             first = new Node(value, first);
         }
     }
 
+    private boolean isEmpty() { return first == null;}
+
+    private void startLinkedList(int value){
+        var node = new Node(value);
+        first = last = node;
+    }
 
     public void deleteFirst(){
         if (first == null) // empty LinkedList
