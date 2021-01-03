@@ -1,5 +1,7 @@
 package com.chrisuribe;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -31,6 +33,7 @@ public class Main {
         System.out.println(myList.indexOf(100));
         System.out.println("Contains: 200 " + myList.contains(200));
         System.out.println(myList.indexOf(200));
+        System.out.println(Arrays.toString(myList.toArray()));
 
 //        LinkedList list = new LinkedList();
 //        list.add(10);list.add(20);list.add(30);

@@ -88,6 +88,18 @@ public class LinkedList {
         return null;
     }
 
+    public int[] toArray() {
+        var array = new int[size];
+        int index = 0;
+        var current = first;
+
+        while (current != null) {
+            array[index++] = current.value;
+            current = current.next;
+        }
+        return array;
+    }
+
 
     private static class Node {
 
