@@ -20,8 +20,8 @@ public class Main {
         System.out.println("Contains: 200 " + myList.contains(200));
         System.out.println(myList.indexOf(200));
 
-        myList.deleteFirst();
-        myList.deleteLast();
+        myList.removeFirst();
+        myList.removeLast();
 
         System.out.println("Contains: 10 " + myList.contains(10));
         System.out.println(myList.indexOf(10));
