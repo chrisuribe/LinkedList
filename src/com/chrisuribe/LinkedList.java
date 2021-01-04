@@ -1,5 +1,6 @@
 package com.chrisuribe;
 
+import java.security.InvalidParameterException;
 import java.util.NoSuchElementException;
 
 public class LinkedList {
@@ -100,6 +101,76 @@ public class LinkedList {
         return array;
     }
 
+    public void reverse() {
+
+        var oldLast = last;
+        last = first;
+        first = oldLast;
+
+        Node previous = null;
+        var current = last;
+        while (current != null) {
+            var next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+
+    }
+
+    // Find the Kth node form the end
+    // of a linked list in one pass
+    public int findKthFromTheEnd(int k) {
+        if (k < 1)
+            throw new IllegalArgumentException("Enter number greater than zero.");
+        if(isEmpty())
+            throw new IllegalStateException();
+
+
+        Node first = this.first;
+        Node second = this.first;
+
+        // move second pointer forward by offset
+        int offset = k - 1;
+        while (offset-- != 0) {
+            second = second.next;
+            if (second == null)
+                throw new IllegalArgumentException("Enter a number smaller than the size of the list.");
+
+        }
+
+        // move both pointers to the end
+        while (second != last) {
+            first = first.next;
+            second = second.next;
+        }
+        return first.value;
+    }
+
+
+    public void printMiddle() {
+        Node middle = first;
+        Node last = first;
+        boolean isEven = false;
+
+        if(first == null)
+            throw new IllegalStateException("ERROR: Empty list.");
+
+        // Move middle pointer to middle while moving last pointer to end
+        while(last.next != null){
+            if(isEven){
+                middle = middle.next;
+            }
+            last = last.next;
+            isEven = !isEven;
+        }
+
+        if(isEven)
+            System.out.println("["+middle.value+","+middle.next.value+"]");
+        else
+            System.out.println("["+middle.value+"]");
+
+    }
 
     private static class Node {
 
