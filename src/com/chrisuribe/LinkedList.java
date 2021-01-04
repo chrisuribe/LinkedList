@@ -123,7 +123,7 @@ public class LinkedList {
     public int findKthFromTheEnd(int k) {
         if (k < 1)
             throw new IllegalArgumentException("Enter number greater than zero.");
-        if(isEmpty())
+        if (isEmpty())
             throw new IllegalStateException();
 
 
@@ -153,23 +153,39 @@ public class LinkedList {
         Node last = first;
         boolean isEven = false;
 
-        if(first == null)
+        if (first == null)
             throw new IllegalStateException("ERROR: Empty list.");
 
         // Move middle pointer to middle while moving last pointer to end
-        while(last.next != null){
-            if(isEven){
+        while (last.next != null) {
+            if (isEven) {
                 middle = middle.next;
             }
             last = last.next;
             isEven = !isEven;
         }
 
-        if(isEven)
-            System.out.println("["+middle.value+","+middle.next.value+"]");
+        if (isEven)
+            System.out.println("[" + middle.value + "," + middle.next.value + "]");
         else
-            System.out.println("["+middle.value+"]");
+            System.out.println("[" + middle.value + "]");
+    }
 
+    public boolean hasLoop() {
+        Node slow = first;
+        Node fast = first.next.next;
+
+        while(fast.next!=null) {
+            if(slow == fast || slow.next == fast)
+                return true;
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return false;
+    }
+
+    public void addLoop() {
+        last.next = first;
     }
 
     private static class Node {

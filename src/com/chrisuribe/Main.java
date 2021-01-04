@@ -21,6 +21,8 @@ public class Main {
         //System.out.println(Arrays.toString(array));
         //System.out.println(myList.findKthFromTheEnd(1));
         myList.printMiddle();
+        myList.addLoop();
+        System.out.println(myList.hasLoop());
 
 
 //        myList.addFirst(10);
